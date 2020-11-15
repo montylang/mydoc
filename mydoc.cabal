@@ -1,0 +1,89 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 79373f58e99544cb61d5f070aaa28113622b778209d9060e4dfa31347bf878e2
+
+name:           mydoc
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/mydoc#readme>
+homepage:       https://github.com/montylang/mydoc#readme
+bug-reports:    https://github.com/montylang/mydoc/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/montylang/mydoc
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_mydoc
+  hs-source-dirs:
+      src
+  default-extensions: NamedFieldPuns GADTs TemplateHaskell
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , filepath
+    , hashable
+    , lens
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , unordered-containers
+  default-language: Haskell2010
+
+executable mydoc-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_mydoc
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , filepath
+    , hashable
+    , lens
+    , megaparsec
+    , mtl
+    , mydoc
+    , parser-combinators
+    , unordered-containers
+  default-language: Haskell2010
+
+test-suite mydoc-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_mydoc
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , directory
+    , filepath
+    , hashable
+    , hspec
+    , lens
+    , megaparsec
+    , mtl
+    , mydoc
+    , parser-combinators
+    , silently
+    , unordered-containers
+  default-language: Haskell2010
